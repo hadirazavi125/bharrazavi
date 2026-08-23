@@ -1,8 +1,12 @@
-
 name: Windows Cloud RDP
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ "main" ]
+  schedule:
+    # اجرای خودکار هر ۵ ساعت و ۵۰ دقیقه جهت جلوگیری از قطعی
+    - cron: '50 */5 * * *'
 
 jobs:
   build:
